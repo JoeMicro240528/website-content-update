@@ -111,6 +111,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/queue-system-egypt-bank-real-installation.webp"
                   alt="أنظمة انتظار العملاء"
                   fill
@@ -129,6 +130,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/nurse-call-system-egypt-hospital-real.webp"
                   alt="أنظمة استدعاء الممرضات"
                   fill
@@ -147,6 +149,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/digital-clock-egypt-mosque-real.webp"
                   alt="الساعات المركزية"
                   fill
@@ -165,6 +168,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/kiosk-egypt-mall-customers-using.webp"
                   alt="أجهزة الخدمات الذاتية"
                   fill
@@ -181,6 +185,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/digital-signage-egypt-airport-real.webp"
                   alt="اللافتات الرقمية"
                   fill
@@ -199,6 +204,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/customer-feedback-terminal-egypt-government.webp"
                   alt="أنظمة تقييم الخدمة"
                   fill
@@ -217,6 +223,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/turnstile-gate-egypt-metro-station.jpg"
                   alt="أنظمة الدخول والخروج"
                   fill
@@ -235,6 +242,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
               <div className="relative h-64 overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/interactive-map-egypt-hospital-real.webp"
                   alt="الخرائط التفاعلية"
                   fill
@@ -263,6 +271,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 border-2 border-red-100">
               <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/queue-products-egypt-installation.webp"
                   alt="منتجات إدارة الطوابير"
                   fill
@@ -280,6 +289,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 border-2 border-gray-100">
               <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/nurse-call-equipment-egypt-hospital.webp"
                   alt="منتجات الرعاية الصحية"
                   fill
@@ -297,6 +307,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 border-2 border-blue-100">
               <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/self-service-kiosks-egypt-bank-branch.webp"
                   alt="أكشاك الخدمة الذاتية"
                   fill
@@ -314,6 +325,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 border-2 border-green-100">
               <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/led-screens-egypt-commercial-building.webp"
                   alt="شاشات العرض الرقمية"
                   fill
@@ -328,7 +340,8 @@ export default function Home() {
             {/* Product Category 5 */}
             <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 border-2 border-purple-100">
               <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
-                <Image src="/photo/synchronized-clocks-egypt-office.webp" alt="أنظمة الساعات" fill className="object-cover" />
+                <Image
+                  loading="lazy" src="/photo/synchronized-clocks-egypt-office.webp" alt="أنظمة الساعات" fill className="object-cover" />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900">أنظمة الساعات</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -341,6 +354,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-yellow-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 border-2 border-yellow-100">
               <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                 <Image
+                  loading="lazy"
                   src="/photo/access-control-egypt-corporate-entrance.webp"
                   alt="أنظمة التحكم بالدخول"
                   fill
@@ -366,6 +380,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
+                loading="lazy"
                 src={galleryImages[currentImageIndex] || "/photo/placeholder.svg"}
                 alt="معرض الصور"
                 width={800}
@@ -407,7 +422,7 @@ export default function Home() {
                   className={`relative h-24 rounded-lg overflow-hidden transition-all ${index === currentImageIndex ? "ring-4 ring-red-600" : "opacity-70 hover:opacity-100"
                     }`}
                 >
-                  <Image src={img || "/photo/placeholder.svg"} alt={`صورة ${index + 1}`} fill className="object-cover" />
+                  <Image loading="lazy" src={img || "/photo/placeholder.svg"} alt={`صورة ${index + 1}`} fill className="object-cover" />
                 </button>
               ))}
             </div>
