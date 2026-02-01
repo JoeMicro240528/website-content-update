@@ -13,7 +13,25 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "B.D.C NET FLAVOURS | نظام انتظار العملاء كيوسيرف",
   description: "حلول تقنية متطورة لإدارة انتظار العملاء وأنظمة الخدمات الذاتية",
-  // keywords:[''],
+  keywords: [
+    "نظام انتظار العملاء",
+    "تنظيم الدور",
+    "Queue Management System",
+    "نظام انتظار العملاء في مصر",
+    "QSERVE",
+    "كيوسيرف",
+    "Q System",
+    "نظام كيو سيستم",
+    "إدارة الطوابير",
+    "جهاز تنظيم العملاء",
+    "أرقام انتظار العملاء",
+    "شاشة انتظار العملاء",
+    "النداء الآلي",
+    "Nurse Call System",
+    "Queue System Egypt",
+    "QMS",
+    "Customer Queue System"
+  ],
   icons: {
     icon: [
       {
