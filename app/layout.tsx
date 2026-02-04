@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Cairo } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { Toaster } from "sonner"
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -13,24 +14,29 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "B.D.C NET FLAVOURS | نظام انتظار العملاء كيوسيرف",
   description: "حلول تقنية متطورة لإدارة انتظار العملاء وأنظمة الخدمات الذاتية",
+  robots: "index, follow",
   keywords: [
     "نظام انتظار العملاء",
-    "تنظيم الدور",
-    "Queue Management System",
+    "اسعار نظام انتظار العملاء",
+    "انظمة انتظار العملاء",
     "نظام انتظار العملاء في مصر",
+    "تنظيم الدور",
+    "إدارة الطوابير",
+    "جهاز أرقام انتظار العملاء",
+    "شاشة انتظار العملاء",
+    "طابعة أرقام انتظار العملاء",
+    "نظام استدعاء العملاء",
+    "النداء الآلي",
+    "Queue Management System",
+    "Customer Queue System",
+    "Queue System Egypt",
+    "Q System",
+    "QMS",
     "QSERVE",
     "كيوسيرف",
-    "Q System",
     "نظام كيو سيستم",
-    "إدارة الطوابير",
-    "جهاز تنظيم العملاء",
-    "أرقام انتظار العملاء",
-    "شاشة انتظار العملاء",
-    "النداء الآلي",
     "Nurse Call System",
-    "Queue System Egypt",
-    "QMS",
-    "Customer Queue System"
+    "استدعاء الممرضات"
   ],
   icons: {
     icon: [
@@ -61,6 +67,7 @@ export default function RootLayout({
       <body className={`${cairo.className} antialiased`}>
         {children}
         <Analytics />
+        <Toaster />
       </body>
     </html>
   )
