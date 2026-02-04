@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { toast } from "sonner"
-import { sendEmail } from "@/app/actions"
 import { Loader2 } from "lucide-react"
+import emailjs from "@emailjs/browser"
 
 const contactFormSchema = z.object({
     name: z.string().min(2, { message: "الاسم يجب أن يكون حرفين على الأقل" }),
@@ -18,6 +18,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>
 
 export function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const formRef = useRef<HTMLFormElement>(null)
 
     const {
         register,
@@ -30,27 +31,42 @@ export function ContactForm() {
 
     async function onSubmit(data: ContactFormValues) {
         setIsSubmitting(true)
-        const formData = new FormData()
-        formData.append("name", data.name)
-        formData.append("email", data.email)
-        formData.append("message", data.message)
+
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+        console.log("Debug EmailJS Keys:", {
+            hasServiceId: !!serviceId,
+            hasTemplateId: !!templateId,
+            hasPublicKey: !!publicKey
+        })
+
+        if (!serviceId || !templateId || !publicKey) {
+            toast.error("خطأ في الإعدادات: مفاتيح EmailJS مفقودة")
+            console.error("Missing EmailJS keys", { serviceId, templateId, publicKey })
+            setIsSubmitting(false)
+            return
+        }
 
         try {
-            const result = await sendEmail(null, formData)
+            await emailjs.send(
+                serviceId,
+                templateId,
+                {
+                    name: data.name,
+                    email: data.email,
+                    message: data.message,
+                },
+                publicKey
+            )
 
-            if (result.success) {
-                toast.success(result.message)
-                reset()
-            } else {
-                toast.error(result.message)
-                if (result.errors) {
-                    // Optionally handle specific field errors from server if needed, 
-                    // but client-side validation should catch most.
-                    console.error(result.errors)
-                }
-            }
-        } catch (error) {
-            toast.error("حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.")
+            toast.success("تم إرسال رسالتك بنجاح!")
+            reset()
+        } catch (error: any) {
+            console.error("EmailJS Error Detail:", error)
+            const errorMessage = error?.text || error?.message || "حدث خطأ غير معروف"
+            toast.error(`فشل الإرسال: ${errorMessage}`)
         } finally {
             setIsSubmitting(false)
         }
