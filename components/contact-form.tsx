@@ -36,11 +36,6 @@ export function ContactForm() {
         const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
         const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
-        console.log("Debug EmailJS Keys:", {
-            hasServiceId: !!serviceId,
-            hasTemplateId: !!templateId,
-            hasPublicKey: !!publicKey
-        })
 
         if (!serviceId || !templateId || !publicKey) {
             toast.error("خطأ في الإعدادات: مفاتيح EmailJS مفقودة")

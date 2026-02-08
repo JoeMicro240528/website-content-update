@@ -26,13 +26,13 @@ export default function Home() {
 
   const galleryImages = [
     "/photo/gallery-1-queue-egypt-hospital-waiting.webp",
-    "/photo/gallery-2-kiosk-egypt-telecom-store.webp",
-    "/photo/gallery-3-nurse-call-egypt-clinic.webp",
-    "/photo/gallery-4-ticket-dispenser-egypt-bank.webp",
-    "/photo/gallery-5-digital-signage-egypt-university.webp",
-    "/photo/gallery-6-turnstile-egypt-government.webp",
-    "/photo/gallery-7-interactive-directory-egypt-mall.webp",
-    "/photo/gallery-8-queue-display-egypt-clinic.webp",
+    "/photo/turnstile-gate-egypt-metro-station.jpg",
+    "/photo/customer-feedback-terminal-egypt-government.webp",
+    "/photo/digital-signage-display-in-shopping-mall.webp",
+    "/photo/access-control-turnstile-gate-system.webp",
+    "/photo/customer-service-evaluation-system.webp",
+    "/photo/digital-signage-egypt-airport-real.webp",
+    "/photo/kiosk-egypt-mall-customers-using.webp",
   ]
 
   const nextImage = () => {
@@ -132,6 +132,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/75 z-0"></div>
 
           <div className="relative z-10 container mx-auto px-4 text-center text-white">
+            <h1 className="text-4xl md:text-6xl font-black mb-8 text-balance drop-shadow-xl tracking-tight">اول مصنع في مصر لتصنيع انظمة انتظار العملاء </h1>
             <h2 className="text-4xl md:text-6xl font-black mb-8 text-balance drop-shadow-xl tracking-tight">
               نظام انتظار العملاء <span className="text-red-500">كيوسيرف</span>
             </h2>
@@ -189,7 +190,7 @@ export default function Home() {
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     loading="lazy"
-                    src="/photo/nurse-call-system-egypt-hospital-real.webp"
+                    src="/photo/nurse-call-system-panel-in-medical-facility.webp"
                     alt="أنظمة استدعاء الممرضات"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -539,7 +540,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 mb-1">العنوان</h4>
-                      <p className="text-gray-600"> مصر</p>
+                      <p className="text-gray-600">المنطقة الصناعية - منطقة 1000 مصنع, التجمع الثالث, القاهرة الجديدة, القاهرة</p>
                     </div>
                   </div>
 
