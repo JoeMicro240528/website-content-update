@@ -12,7 +12,7 @@ const cairo = Cairo({
 })
 
 export const metadata: Metadata = {
-  title: "اسعار نظام انتظار العملاء QSERVE | Queuing System Egypt | شاشات انتظار العملاء وأنظمة استدعاء الممرضات Nurse Call System",
+  title: "نظام انتظار العملاء QSERVE في مصر | اسعار Queuing System وشاشات الانتظار وأنظمة Nurse Call",
   description: "حلول تقنية متطورة لإدارة انتظار العملاء وأنظمة الخدمات الذاتية",
   robots: "index, follow",
   keywords: [

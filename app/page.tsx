@@ -26,12 +26,12 @@ export default function Home() {
 
   const galleryImages = [
     "/photo/gallery-1-queue-egypt-hospital-waiting.webp",
-    "/photo/turnstile-gate-egypt-metro-station.jpg",
     "/photo/customer-feedback-terminal-egypt-government.webp",
     "/photo/digital-signage-display-in-shopping-mall.webp",
-    "/photo/access-control-turnstile-gate-system.webp",
+    "/photo/self service.jpeg",
     "/photo/customer-service-evaluation-system.webp",
     "/photo/digital-signage-egypt-airport-real.webp",
+    "/photo/Self-service checkout and food ordering machines.jpeg",
     "/photo/kiosk-egypt-mall-customers-using.webp",
   ]
 
@@ -132,7 +132,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/75 z-0"></div>
 
           <div className="relative z-10 container mx-auto px-4 text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-black mb-8 text-balance drop-shadow-xl tracking-tight">اول مصنع في مصر لتصنيع انظمة انتظار العملاء </h1>
+            <h1 className="text-4xl md:text-6xl font-black mb-8 text-balance drop-shadow-xl tracking-tight leading-relaxed">اول مصنع في مصر لتصنيع </h1>
             <h2 className="text-4xl md:text-6xl font-black mb-8 text-balance drop-shadow-xl tracking-tight">
               نظام انتظار العملاء <span className="text-red-500">كيوسيرف</span>
             </h2>
@@ -171,7 +171,7 @@ export default function Home() {
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     loading="lazy"
-                    src="/photo/queue-system-egypt-bank-real-installation.webp"
+                    src="/photo/queue service systems.jpeg"
                     alt="أنظمة انتظار العملاء"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -190,7 +190,7 @@ export default function Home() {
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     loading="lazy"
-                    src="/photo/nurse-call-system-panel-in-medical-facility.webp"
+                    src="/photo/nurse call systems.jpeg"
                     alt="أنظمة استدعاء الممرضات"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -209,7 +209,7 @@ export default function Home() {
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     loading="lazy"
-                    src="/photo/digital-clock-egypt-mosque-real.webp"
+                    src="/photo/Master clock system.jpeg"
                     alt="الساعات المركزية"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -228,7 +228,7 @@ export default function Home() {
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     loading="lazy"
-                    src="/photo/kiosk-egypt-mall-customers-using.webp"
+                    src="/photo/self service.jpeg"
                     alt="أجهزة الخدمات الذاتية"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -236,7 +236,7 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-3 text-gray-900">أجهزة الخدمات الذاتية</h3>
-                  <p className="text-gray-600 leading-relaxed">أكشاك خدمة ذاتية تفاعلية توفر تجربة مستخدم سلسة ومريحة</p>
+                  <p className="text-gray-600 leading-relaxed"> أجهزة خدمة ذاتية تفاعلية توفر تجربة مستخدم سلسة ومريحة</p>
                 </div>
               </div>
 
@@ -283,16 +283,16 @@ export default function Home() {
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     loading="lazy"
-                    src="/photo/turnstile-gate-egypt-metro-station.jpg"
-                    alt="أنظمة الدخول والخروج"
+                    src="/photo/Self-service checkout and food ordering machines.jpeg"
+                    alt="اجهزة الدفع الذاتي وطلب الطعام"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 text-gray-900">أنظمة الدخول والخروج</h3>
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900">اجهزة الدفع الذاتي وطلب الطعام</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    حلول أمنية متقدمة لإدارة دخول وخروج الموظفين والزوار بكفاءة
+                    اجهزة الدفع الذاتي توفر تجربة مستخدم سلسة ومريحة
                   </p>
                 </div>
               </div>
@@ -341,7 +341,7 @@ export default function Home() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   شاشات عرض، موزعات التذاكر، وحدات الاستدعاء، لوحات التحكم
                 </p>
-                <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button>
+                {/* <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button> */}
               </div>
 
               {/* Product Category 2 */}
@@ -349,7 +349,7 @@ export default function Home() {
                 <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                   <Image
                     loading="lazy"
-                    src="/photo/nurse-call-equipment-egypt-hospital.webp"
+                    src="/photo/nurse call systems.jpeg"
                     alt="منتجات الرعاية الصحية"
                     fill
                     className="object-cover"
@@ -359,7 +359,7 @@ export default function Home() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   أنظمة استدعاء الممرضات، شاشات المرضى، لوحات التحكم الطبية
                 </p>
-                <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button>
+                {/* <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button> */}
               </div>
 
               {/* Product Category 3 */}
@@ -377,7 +377,7 @@ export default function Home() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   نماذج متعددة للخدمات البنكية، الفنادق، المطاعم، والمحلات
                 </p>
-                <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button>
+                {/* <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button> */}
               </div>
 
               {/* Product Category 4 */}
@@ -393,7 +393,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">شاشات العرض الرقمية</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">شاشات LED، LCD، شاشات تفاعلية، وحلول العرض المتكاملة</p>
-                <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button>
+                {/* <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button> */}
               </div>
 
               {/* Product Category 5 */}
@@ -406,7 +406,7 @@ export default function Home() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   ساعات رقمية مركزية، ساعات خارجية، أنظمة التوقيت الدقيق
                 </p>
-                <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button>
+                {/* <button className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button> */}
               </div>
 
               {/* Product Category 6 */}
@@ -424,7 +424,7 @@ export default function Home() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   بوابات إلكترونية، قارئات البطاقات، أنظمة البصمة، كاميرات المراقبة
                 </p>
-                <button aria-label="عرض المزيد" className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button>
+                {/* <button aria-label="عرض المزيد" className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button> */}
               </div>
             </div>
           </div>
