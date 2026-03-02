@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, Phone, Mail, MapPin, ChevronLeft, ChevronRight, Facebook, Youtube } from "lucide-react"
+import { Menu, X, Phone, Mail, MapPin, ChevronLeft, ChevronRight, Facebook, Youtube, PhoneCall } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { ContactForm } from "@/components/contact-form"
 
 function WhatsApp({ size = 24, className }: { size?: number | string, className?: string }) {
@@ -25,14 +26,12 @@ export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const galleryImages = [
-    "/photo/gallery-1-queue-egypt-hospital-waiting.webp",
-    "/photo/customer-feedback-terminal-egypt-government.webp",
-    "/photo/digital-signage-display-in-shopping-mall.webp",
-    "/photo/self service.jpeg",
-    "/photo/customer-service-evaluation-system.webp",
-    "/photo/digital-signage-egypt-airport-real.webp",
-    "/photo/Self-service checkout and food ordering machines.jpeg",
-    "/photo/kiosk-egypt-mall-customers-using.webp",
+    { src: "/gallery/gallery10.jpeg", alt: "صورة من مشاريعنا - 1" },
+    { src: "/gallery/gallery5.jpeg", alt: "صورة من مشاريعنا - 2" },
+    { src: "/gallery/gallery7.jpeg", alt: "صورة من مشاريعنا - 3" },
+    { src: "/gallery/gallery8.jpeg", alt: "صورة من مشاريعنا - 4" },
+    { src: "/gallery/gallery1.jpeg", alt: "صورة من مشاريعنا - 5" },
+    { src: "/gallery/gallery9.jpeg", alt: "صورة من مشاريعنا - 6" },
   ]
 
   const nextImage = () => {
@@ -50,62 +49,81 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white" dir="rtl">
       {/* Header */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
+      {/* Visually Hidden SEO Keywords */}
+      <div className="sr-only" aria-hidden="true">
+        كيوسيرف, QSERVE, نظام انتظار العملاء, شاشات انتظار العملاء, انظمة انتظار العملاء في مصر, Queue Management System Egypt, تنظيم الدور, عرض أرقام الانتظار, Self Service Kiosks, أجهزة كيوسك, جهاز كيوسك, شاشة تاتش, شاشة لمسية تفاعلية, Nurse Call System, نظام استدعاء الممرضات, نظام نداء, جهاز الدفع الذاتي, طلب الطعام الذاتي
+      </div>
+      <header className="bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <a
-              href="https://api.whatsapp.com/send?phone=201227993999"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors shadow-md group"
-            >
-              <WhatsApp size={24} className=" text-green-300" />
-              <div className="flex gap-2 leading-tight">
-                <span className="text-xs font-bold opacity-90">اتصل بنا الآن</span>
-              </div>
-            </a>
 
-            {/* Desktop Menu */}
-            <nav className="hidden md:flex gap-8 items-center">
-              <a href="#home" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
+            {/* Desktop Menu — pill container */}
+            <nav className="hidden md:flex items-center bg-gray-100 rounded-full px-2 py-1.5 gap-1">
+              <a href="#home" className="text-xs font-semibold px-4 py-2 rounded-full bg-red-600 text-white shadow-sm transition-all">
                 الرئيسية
               </a>
-              <a href="#services" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
+              <a href="#services" className="text-xs font-medium px-4 py-2 rounded-full text-gray-600 hover:bg-white hover:text-red-600 hover:shadow-sm transition-all">
                 خدماتنا
               </a>
-              <a href="#products" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
+              <a href="#products" className="text-xs font-medium px-4 py-2 rounded-full text-gray-600 hover:bg-white hover:text-red-600 hover:shadow-sm transition-all">
                 منتجاتنا
               </a>
-              <a href="#gallery" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
-                معرض الصور
-              </a>
-              <a href="#contact" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
+              <Link href="/queue-system" className="text-xs font-medium px-4 py-2 rounded-full text-gray-600 hover:bg-white hover:text-red-600 hover:shadow-sm transition-all">
+                نظام الانتظار
+              </Link>
+              <Link href="/nurse-call-system" className="text-xs font-medium px-4 py-2 rounded-full text-gray-600 hover:bg-white hover:text-red-600 hover:shadow-sm transition-all">
+                استدعاء الممرضات
+              </Link>
+              <Link href="/self-service-kiosks" className="text-xs font-medium px-4 py-2 rounded-full text-gray-600 hover:bg-white hover:text-red-600 hover:shadow-sm transition-all">
+                الخدمات الذاتية
+              </Link>
+              <a href="#contact" className="text-xs font-medium px-4 py-2 rounded-full text-gray-600 hover:bg-white hover:text-red-600 hover:shadow-sm transition-all">
                 تواصل معنا
               </a>
             </nav>
 
+            {/* WhatsApp CTA */}
+            <a
+              href="https://api.whatsapp.com/send?phone=201227993999"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition-all shadow-md text-xs font-bold"
+            >
+              <WhatsApp size={18} className="text-green-300" />
+              تواصل معنا للحصول على عرض سعر
+            </a>
+
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-gray-700" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            <button className="md:hidden text-gray-700 p-2 rounded-full hover:bg-gray-100 transition-colors" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <nav className="md:hidden mt-4 flex flex-col gap-4 pb-4">
-              <a href="#home" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
+            <nav className="md:hidden mt-3 flex flex-col gap-1 pb-3 border-t border-gray-100 pt-3">
+              <a href="#home" className="text-sm font-semibold px-4 py-2.5 rounded-xl bg-red-600 text-white">
                 الرئيسية
               </a>
-              <a href="#services" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
+              <a href="#services" className="text-sm font-medium px-4 py-2.5 rounded-xl text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
                 خدماتنا
               </a>
-              <a href="#products" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
+              <a href="#products" className="text-sm font-medium px-4 py-2.5 rounded-xl text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
                 منتجاتنا
               </a>
-              <a href="#gallery" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
+              <Link href="/queue-system" className="text-sm font-medium px-4 py-2.5 rounded-xl text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
+                نظام الانتظار
+              </Link>
+              <Link href="/nurse-call-system" className="text-sm font-medium px-4 py-2.5 rounded-xl text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
+                استدعاء الممرضات
+              </Link>
+              <Link href="/self-service-kiosks" className="text-sm font-medium px-4 py-2.5 rounded-xl text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
+                الخدمات الذاتية
+              </Link>
+              <a href="#gallery" className="text-sm font-medium px-4 py-2.5 rounded-xl text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
                 معرض الصور
               </a>
-              <a href="#contact" className="text-gray-700 hover:text-red-600 transition-colors font-semibold">
+              <a href="#contact" className="text-sm font-medium px-4 py-2.5 rounded-xl text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
                 تواصل معنا
               </a>
             </nav>
@@ -331,7 +349,7 @@ export default function Home() {
                 <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                   <Image
                     loading="lazy"
-                    src="/photo/queue-products-egypt-installation.webp"
+                    src="/gallery/gallery10.jpeg"
                     alt="منتجات إدارة الطوابير"
                     fill
                     className="object-cover"
@@ -414,21 +432,127 @@ export default function Home() {
                 <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                   <Image
                     loading="lazy"
-                    src="/photo/access-control-egypt-corporate-entrance.webp"
-                    alt="أنظمة التحكم بالدخول"
+                    src="/photo/orderfood.jpeg"
+                    alt="اجهزة الدفع الذاتي وطلب الطعام"
                     fill
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">أنظمة التحكم بالدخول</h3>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">اجهزة الدفع الذاتي وطلب الطعام</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  بوابات إلكترونية، قارئات البطاقات، أنظمة البصمة، كاميرات المراقبة
+                  جهاز للدفع الذاتي، واجهزة طلب الطعام، توفر حلولاً متكاملة للخدمات الذاتية
                 </p>
                 {/* <button aria-label="عرض المزيد" className="text-red-600 font-bold hover:text-red-700 transition-colors">عرض المزيد ←</button> */}
               </div>
             </div>
           </div>
         </section>
+        <section className="py-24 relative overflow-hidden" dir="rtl">
+          {/* Background Elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-red-50 z-0"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-red-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gray-200/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+          <div className="container mx-auto px-4 max-w-6xl relative z-10">
+            <div className="text-center mb-16 max-w-4xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-900 leading-tight">
+                كيوسيرف <span className="text-red-600">QSERVE</span>
+                <br />
+                <span className="text-2xl md:text-4xl mt-2 block text-gray-700">حلول ذكية لنظام انتظار العملاء في مصر</span>
+              </h2>
+
+              <p className="text-xl text-gray-600 leading-relaxed">
+                <strong>كيوسيرف (QSERVE)</strong> تقدم حلول تقنية متطورة تساعد المؤسسات في مصر على تنظيم الدور وتحسين تجربة العملاء
+                من خلال <strong>نظام انتظار العملاء</strong>، <strong>شاشات انتظار العملاء</strong>، أجهزة الكيوسك للخدمات الذاتية،
+                ونظام استدعاء الممرضات.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Card 1 */}
+              <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-100 transform hover:-translate-y-2">
+                <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                  <div className="text-red-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                  </div>
+                </div>
+                <h2 className="text-2xl font-bold mb-4 text-gray-900">نظام انتظار العملاء</h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  حلول ذكية لتنظيم الدور وعرض أرقام الانتظار عبر شاشات عالية الوضوح لتقليل الزحام.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                    تنظيم الدور بشكل آلي
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                    شاشات عرض عالية الوضوح
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                    تقليل وقت الانتظار
+                  </li>
+                </ul>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-100 transform hover:-translate-y-2">
+                <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                  <div className="text-red-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg>
+                  </div>
+                </div>
+                <h2 className="text-2xl font-bold mb-4 text-gray-900">أجهزة الخدمات الذاتية</h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  شاشات تفاعلية تعمل باللمس للدفع الذاتي وطلب الخدمات بسرعة وكفاءة.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                    شاشات تاتش تفاعلية
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                    دعم الدفع الإلكتروني
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                    حلول للمطاعم والبنوك
+                  </li>
+                </ul>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-100 transform hover:-translate-y-2">
+                <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                  <div className="text-red-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
+                  </div>
+                </div>
+                <h2 className="text-2xl font-bold mb-4 text-gray-900">نظام استدعاء الممرضات</h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  حلول للمستشفيات لتحسين سرعة الاستجابة ورفع مستوى الرعاية الصحية.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                    استجابة سريعة للنداءات
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                    تحسين التواصل الطبي
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                    متوافق مع المعايير
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         {/* Gallery Section */}
         <section id="gallery" className="py-20 bg-gray-50">
@@ -440,11 +564,11 @@ export default function Home() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   loading="lazy"
-                  src={galleryImages[currentImageIndex] || "/photo/placeholder.svg"}
-                  alt="معرض الصور"
-                  width={800}
-                  height={500}
-                  className="w-full h-[500px] object-cover"
+                  src={galleryImages[currentImageIndex]?.src || "/photo/placeholder.svg"}
+                  alt={galleryImages[currentImageIndex]?.alt || "معرض الصور"}
+                  width={700}
+                  height={400}
+                  className="w-full h-[400px] object-cover"
                 />
 
                 <button
@@ -487,7 +611,7 @@ export default function Home() {
                     className={`relative h-24 rounded-lg overflow-hidden transition-all ${index === currentImageIndex ? "ring-4 ring-red-600" : "opacity-70 hover:opacity-100"
                       }`}
                   >
-                    <Image loading="lazy" src={img || "/photo/placeholder.svg"} alt={`صورة ${index + 1}`} fill className="object-cover" />
+                    <Image loading="lazy" src={img.src || "/photo/placeholder.svg"} alt={img.alt} fill className="object-cover" />
                   </button>
                 ))}
               </div>
@@ -495,11 +619,21 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="container mx-auto text-center py-2 my-2 ">
+          <h3 className="text-2xl font-bold mb-4 text-black ">QSERVE Customer <span className="text-red-600">Reference</span> </h3>
+          <div>
+            <Image src="/photo/queue customer referens4.png" alt="QSERVE Logo" width={100} height={100} className="w-[100%] h-90 object-contain" />
+          </div>
+        </div>
+
         {/* Contact Section */}
-        <section id="contact" className="py-20 bg-white">
+        <section id="contact" className="pb-20 pt-10 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-black text-center mb-4 text-gray-900">تواصل معنا</h2>
-            <p className="text-center text-gray-600 mb-16 text-xl">نحن هنا للإجابة على استفساراتك</p>
+            <div className="text-center flex items-center justify-center gap-2 text-gray-600 mb-16 text-xl">
+              <span className="text-red-600 font-bold">تواصل معنا الآن للحصول على عرض سعر </span>
+              <PhoneCall className="text-red-600" size={24} />
+            </div>
 
             <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
               <div>
@@ -592,10 +726,14 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-red-600">B.D.C NET</h3>
-              <p className="text-gray-400 leading-relaxed">
-                نقدم حلول تقنية متطورة لإدارة انتظار العملاء وتحسين تجربة الخدمة في جميع القطاعات
-              </p>
+              <h3 className="text-2xl font-bold mb-4 text-red-600">لماذا كيوسيرف QSERVE؟</h3>
+              <div className="text-gray-400 leading-relaxed">
+                <ul className="list-disc">
+                  <li>حلول مصممة خصيصًا للسوق المصري</li>
+                  <li>خبرة في أنظمة انتظار العملاء وشاشات الانتظار</li>
+                  <li>دعم فني وتركيب احترافي</li>
+                </ul>
+              </div>
             </div>
 
             <div>
@@ -617,6 +755,21 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
+                  <Link href="/queue-system" className="hover:text-red-600 transition-colors">
+                    نظام الانتظار
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/nurse-call-system" className="hover:text-red-600 transition-colors">
+                    استدعاء الممرضات
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/self-service-kiosks" className="hover:text-red-600 transition-colors">
+                    الخدمات الذاتية
+                  </Link>
+                </li>
+                <li>
                   <a href="#contact" className="hover:text-red-600 transition-colors">
                     تواصل معنا
                   </a>
@@ -635,10 +788,15 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2026 B.D.C NET FLAVOURS. جميع الحقوق محفوظة.</p>
+            <p>&copy; 2026 QSERVE جميع الحقوق محفوظة.</p>
           </div>
         </div>
       </footer>
+
+      {/* Visually Hidden SEO Keywords */}
+      <div className="sr-only" aria-hidden="true">
+        كيوسيرف, QSERVE, نظام انتظار العملاء, شاشات انتظار العملاء, انظمة انتظار العملاء في مصر, Queue Management System Egypt, تنظيم الدور, عرض أرقام الانتظار, Self Service Kiosks, أجهزة كيوسك, جهاز كيوسك, شاشة تاتش, شاشة لمسية تفاعلية, Nurse Call System, نظام استدعاء الممرضات, نظام نداء, جهاز الدفع الذاتي, طلب الطعام الذاتي
+      </div>
     </div>
   )
 }

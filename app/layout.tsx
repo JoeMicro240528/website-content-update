@@ -1,19 +1,22 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Cairo } from "next/font/google"
+import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Toaster } from "sonner"
 
-const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+const cairo = localFont({
+  src: "../public/fonts/cairo.ttf",
+  variable: "--font-cairo",
+  weight: "200 1000",
   display: "swap",
 })
 
+
+
 export const metadata: Metadata = {
-  title: "نظام انتظار العملاء QSERVE في مصر | اسعار Queuing System وشاشات الانتظار وأنظمة Nurse Call",
-  description: "حلول تقنية متطورة لإدارة انتظار العملاء وأنظمة الخدمات الذاتية",
+  title: "نظام انتظار العملاء في مصر | Queue Management System Egypt | QSERVE",
+  description: "نظام انتظار العملاء في مصر من QSERVE يوفر أحدث حلول Queue Management System لتنظيم الطوابير في البنوك والمستشفيات والشركات مع دعم فني كامل وتركيب احترافي.",
   robots: "index, follow",
   keywords: [
     "نظام انتظار العملاء",
@@ -42,21 +45,11 @@ export const metadata: Metadata = {
     "جهاز للدفع الذاتي وطلب الطعام"
   ],
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/photo/qserve-queue-management-system-display.webp",
+    apple: "/photo/qserve-queue-management-system-display.webp",
+  },
+  alternates: {
+    canonical: "https://bdcegypt.com/",
   },
 }
 
